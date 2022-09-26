@@ -1,21 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Box } from '../Box';
+import { Button } from '../Button';
+// import { HiEmojiHappy } from 'react-icons/hi';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div>
+    <Box width={1} display="flex" alignItems="center">
       {Object.entries(options).map(([key]) => {
         return (
-          <button
+          <Button
             key={key}
-            type="button"
             onClick={() => {
               onLeaveFeedback(key);
             }}
           >
             {key}
-          </button>
+          </Button>
         );
       })}
-    </div>
+    </Box>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.object,
+  onLeaveFeedback: PropTypes.func,
 };

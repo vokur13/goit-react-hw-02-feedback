@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { SectionTitle } from './SectionTitle.styled';
+import { Box } from '../Box';
 
 export const Section = ({ title, children }) => {
   return (
-    <section>
-      <div>
-        {title && <h2>{title}</h2>}
-        {children}
-      </div>
-    </section>
+    <Box mb={1}>
+      {title && <h2>{title}</h2>}
+      {children}
+    </Box>
   );
 };
 
